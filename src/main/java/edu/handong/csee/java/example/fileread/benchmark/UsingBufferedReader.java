@@ -8,7 +8,7 @@ import java.io.*;
 public class UsingBufferedReader {
     public static void main(String[] args) throws IOException {
 
-
+    	/*
         //-------------- Test reading 1 MB file. --------------------
 
         StopWatch.start();
@@ -33,7 +33,18 @@ public class UsingBufferedReader {
         System.out.println(duration2 + " milsec");
 
         inputStream2.close();
+        */
+        //----------------- command line argument------------------------
+        StopWatch.start();
 
+        BufferedReader inputStream3= new BufferedReader(new FileReader(args[0]));
+        while (inputStream3.read()!=-1){}
+
+        long duration3 = StopWatch.stop();
+        System.out.println(duration3 + " milsec");
+
+        inputStream3.close();
+        
         /*
         //-------------- Test reading 100 MB file. --------------------
 
